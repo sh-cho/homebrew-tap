@@ -6,7 +6,6 @@ class Idt < Formula
   desc "A fast, ergonomic CLI tool for working with various ID formats"
   homepage "https://github.com/sh-cho/idt"
   version "0.1.2"
-  license "MIT OR Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
@@ -43,6 +42,8 @@ class Idt < Formula
       end
     end
   end
+
+  license any_of: ["MIT", "Apache-2.0"]
 
   test do
     system "#{bin}/idt", "--version"
