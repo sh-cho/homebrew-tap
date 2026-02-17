@@ -5,21 +5,21 @@
 class Idt < Formula
   desc "A fast, ergonomic CLI tool for working with various ID formats"
   homepage "https://github.com/sh-cho/idt"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.2/idt_darwin_x86_64.tar.gz"
-      sha256 "990df4c1574780cdf9484a5badcde988ac4cd722250eb407a662a3fd980f477f"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.3/idt_darwin_x86_64.tar.gz"
+      sha256 "9457f48e31f95616e3697de729d2e06a13f016f332f79c35d146083b289dc25d"
 
       def install
         bin.install "idt"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.2/idt_darwin_arm64.tar.gz"
-      sha256 "1cdd97f617296e628c54b7da33087eac38dedfeb0f366ad70ea076b95feb31ea"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.3/idt_darwin_arm64.tar.gz"
+      sha256 "ee448ce25edab218f40d43863eed85c8e57f0dcd520ad6a9f784216e95ceb231"
 
       def install
         bin.install "idt"
@@ -29,15 +29,15 @@ class Idt < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.2/idt_linux_x86_64.tar.gz"
-      sha256 "f6088cf359cd01645672c072eb59dd4f9632a9b6499436cebc3ed609d7cf2df6"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.3/idt_linux_x86_64.tar.gz"
+      sha256 "58da650f44d1a0853e0aece1f8186ec6a26ca44bc37c5ab66c8faf7bc7b14dfc"
       def install
         bin.install "idt"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.2/idt_linux_arm64.tar.gz"
-      sha256 "f22aef03054100e67463c1d4f8b8d4ba541cf8a2d70f2421f031d019bad2d52f"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.3/idt_linux_arm64.tar.gz"
+      sha256 "b4e71837150910fc58c62f770159e3d6df00b1e01c362a1fcfc5e34fb605d8eb"
       def install
         bin.install "idt"
       end
