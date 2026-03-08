@@ -5,13 +5,13 @@
 class Idt < Formula
   desc "A fast, ergonomic CLI tool for working with various ID formats"
   homepage "https://github.com/sh-cho/idt"
-  version "0.1.8"
+  version "0.1.9"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.8/idt_darwin_x86_64.tar.gz"
-      sha256 "33ad059767229c989f4b8f68f1866ea15f62d073735d2526e808ce48c248357d"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.9/idt_darwin_x86_64.tar.gz"
+      sha256 "eb0d94188f06545d2370789b20c70a0ef77a5ed4195ad410fa701020b742b583"
 
       define_method(:install) do
         bin.install "idt"
@@ -21,11 +21,12 @@ class Idt < Formula
         (bash_completion/"idt").write generate_completions_from.call("bash")
         (zsh_completion/"_idt").write generate_completions_from.call("zsh")
         (fish_completion/"idt.fish").write generate_completions_from.call("fish")
+        system "#{bin}/idt", "manpage", man1.to_s
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.8/idt_darwin_arm64.tar.gz"
-      sha256 "6d96a57481ac286c4d7a27e8c246d1d3ad0729cf50af73893702293beebed345"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.9/idt_darwin_arm64.tar.gz"
+      sha256 "d132d61e44a266f18dede94987bff7d49287fdb6dc709e012fa05cd1b860fe5b"
 
       define_method(:install) do
         bin.install "idt"
@@ -35,14 +36,15 @@ class Idt < Formula
         (bash_completion/"idt").write generate_completions_from.call("bash")
         (zsh_completion/"_idt").write generate_completions_from.call("zsh")
         (fish_completion/"idt.fish").write generate_completions_from.call("fish")
+        system "#{bin}/idt", "manpage", man1.to_s
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.8/idt_linux_x86_64.tar.gz"
-      sha256 "69e2e00cf3db6d8dd32095b89afbbae71bc9b429baf5f9fdbc504b7543bdcb45"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.9/idt_linux_x86_64.tar.gz"
+      sha256 "d806124416a2e60055f364e18add9d8db7ec1b122909639c3fe23e4d82a280d4"
       define_method(:install) do
         bin.install "idt"
         generate_completions_from = proc do |shell|
@@ -51,11 +53,12 @@ class Idt < Formula
         (bash_completion/"idt").write generate_completions_from.call("bash")
         (zsh_completion/"_idt").write generate_completions_from.call("zsh")
         (fish_completion/"idt.fish").write generate_completions_from.call("fish")
+        system "#{bin}/idt", "manpage", man1.to_s
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.8/idt_linux_arm64.tar.gz"
-      sha256 "7d913144cde6a9ba3c6dc59a2ea02186a99bb29253724ac2c050e6f78c285215"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.9/idt_linux_arm64.tar.gz"
+      sha256 "eaccd84d17e0959f960365ac865b28fb1850bb8485778809425e7246d2cb6597"
       define_method(:install) do
         bin.install "idt"
         generate_completions_from = proc do |shell|
@@ -64,6 +67,7 @@ class Idt < Formula
         (bash_completion/"idt").write generate_completions_from.call("bash")
         (zsh_completion/"_idt").write generate_completions_from.call("zsh")
         (fish_completion/"idt.fish").write generate_completions_from.call("fish")
+        system "#{bin}/idt", "manpage", man1.to_s
       end
     end
   end
