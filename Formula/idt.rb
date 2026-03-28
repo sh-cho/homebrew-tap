@@ -5,13 +5,13 @@
 class Idt < Formula
   desc "A fast, ergonomic CLI tool for working with various ID formats"
   homepage "https://github.com/sh-cho/idt"
-  version "0.1.19"
+  version "0.1.20"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.19/idt_darwin_x86_64.tar.gz"
-      sha256 "3673c9e17d6b2da176555872488f8b1e225e49ec6edbe54329a404e64eb6fe4c"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.20/idt_darwin_x86_64.tar.gz"
+      sha256 "7d4b8be2a54ee5a26d7858821e78f43692aa2c000642212f1805f79e36cc261f"
 
       define_method(:install) do
         bin.install "idt"
@@ -25,8 +25,8 @@ class Idt < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.19/idt_darwin_arm64.tar.gz"
-      sha256 "0fe4e451241171891f3cb8589813d843e9ab427e7ee15765d7755467cf1e3e47"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.20/idt_darwin_arm64.tar.gz"
+      sha256 "a1ab8c5f9754df64aa8c242ac3eb1bfc95fd9955435497499f6596223fa70afb"
 
       define_method(:install) do
         bin.install "idt"
@@ -43,8 +43,8 @@ class Idt < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.19/idt_linux_x86_64.tar.gz"
-      sha256 "7185d9662f436e00e84a0c11c6324d52219a556c2a64ffa0fe5600ca1829938e"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.20/idt_linux_x86_64.tar.gz"
+      sha256 "07aede5b1828d0cf91f3d2572184177586f95ffb68cd694d141341dd60e40823"
       define_method(:install) do
         bin.install "idt"
         generate_completions_from = proc do |shell|
@@ -57,8 +57,8 @@ class Idt < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sh-cho/idt/releases/download/0.1.19/idt_linux_arm64.tar.gz"
-      sha256 "f8fe3e8f79fe86966661cee0eafa6a5baaf2bbe6723969b5f1152f7eb8103197"
+      url "https://github.com/sh-cho/idt/releases/download/0.1.20/idt_linux_arm64.tar.gz"
+      sha256 "1c91dd143884da8b86a05b697495d5227f8903b5616b38b672dee34186f424e7"
       define_method(:install) do
         bin.install "idt"
         generate_completions_from = proc do |shell|
